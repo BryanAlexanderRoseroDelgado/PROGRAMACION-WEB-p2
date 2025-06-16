@@ -1,0 +1,52 @@
+body{
+    background-color: aqua;
+}
+
+header,footer{
+    background-color: blueviolet;
+    color: blue;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.contenido1{
+    background-color: chartreuse;
+}
+
+.contenido2{
+    background-color: brown;
+}
+
+main{
+    display: flex;
+    flex-direction:row;
+}
+
+.columnas{
+    padding: 20px;
+    border:2px;
+    box-sizing:border-box;
+    border-width: 2px;
+    width: 50%;
+}
+
+/*CONFIGURAR PARA DESKTOP*/
+
+@media(min-width:520px){
+    body{
+        background-color:black;
+    }
+    main{
+        flex-direction:column ;
+    }
+    .columnas{
+        width: 100%;
+    }
+    .contenido1{
+        background-color: cadetblue;
+    }
+    .contenido2{
+        background-color: coral;
+    }
+}

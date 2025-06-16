@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Página de Inicio Google</title>
+  <style>
+    :root {
+      --color-fondo: #f2f2f2;
+      --color-texto: #000000;
+      --color-input: white;
+      --color-boton: #4285f4;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--color-fondo);
+      color: var(--color-texto);
+      transition: background-color 0.3s;
+    }
+
+    .logo {
+      position: absolute;
+      top: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+    }
+
+    .busqueda {
+      position: sticky;
+      top: 200px;
+      margin-top: 250px;
+      padding: 20px;
+      background-color: var(--color-fondo);
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    input{
+      width: 400px;
+      padding: 10px;
+      font-size: 16px;
+      border: 3px solid #ccc;
+      border-radius: 20px;
+      background-color: var(--color-input);
+      color: var(--color-texto);
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      border: none;
+      border-radius: 20px;
+      background-color: var(--color-boton);
+      color: white;
+      cursor: pointer;
+    }
+
+    .personalizar {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      padding: 10px 15px;
+      background-color:#4285f4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .configurar {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--color-texto);
+      transition: color 0.3s;
+    }
+
+    .modo-oscuro {
+      --color-fondo: #121212;
+      --color-texto: #ffffff;
+      --color-input: #1e1e1e;
+      --color-boton: #3c82f6;
+    }
+  </style>
+</head>
+<body>
+
+  <button class="configurar" onclick="document.body.classList.toggle('modo-oscuro')">⚙️</button>
+
+  <img src="./public/image/images.png"
+       alt="Logo"
+       class="logo" />
+
+  <div class="busqueda">
+    <input type="text" placeholder="Buscar en Google...">
+    <button>Buscar</button>
+  </div>
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+  <button class="personalizar">✏️ Personalizar página</button>
+
+</body>
+</html>
+
+

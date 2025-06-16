@@ -1,0 +1,55 @@
+:root{
+    --desktop:520px;
+    --colorfondo:burlywood;
+}
+
+header  {
+    background-color:var(--colorfondo);
+    color: rgb(41, 76, 7);
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    padding: 15px;
+    
+}
+.menu_principal{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(0, 13, 255);
+    
+}
+
+.menu_principal a{
+    color: azure;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.menu_principal a:hover{
+    background-color: cornflowerblue;
+    font-size: large;
+    transition: 0.5s;
+}
+
+footer{
+    text-align: center;
+    font-size: 20px;
+    background-color:var(--colorfondo);
+    position: fixed;
+    bottom: 5px;
+}
+
+
+
+@media(min-width:var(--desktop)){
+    .menu_principal{
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(8, 73, 36);
+        justify-content: center;
+    }
+    .menu_principal a{
+        border-bottom: none;
+        border-right: 2px solid black;
+    }
+}

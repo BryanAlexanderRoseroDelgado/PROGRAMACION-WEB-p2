@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS posicionamiento</title>
+    
+    <style>
+        .caja_saludo_static{
+            position: static;
+            /*en static no se pueden definir posiciones*/
+        }
+        .caja_saludo_relative{
+            position: relative; top:20px;left: 30px;
+        }
+        .caja_saludo_absoluta{
+            position: absolute; top:400px;left: 300px; bottom: 200px; right: 300px;
+        }
+        .caja_saludo_fixed{
+            position: fixed;
+            top: 2px;
+            right: 2px;
+        }
+
+        .caja_saludo_stiky{
+            position: sticky;
+            top: 0;
+            left: 24;
+        }
+        div{
+            background-color: rgb(45, 103, 103);
+            border-radius:10px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body style="background-color: rgb(45, 58, 75);">
+    
+    <div class="caja_saludo_static">
+        <h1>hola mundo</h1>
+        <p>caja estatica</p>
+    </div>
+    
+    <div class="caja_saludo_relative">
+        <h1>hola mundo</h1>
+        <p>caja relativa</p>
+    </div>
+
+    <div class="caja_saludo_absoluta">
+        <h1>hola mundo</h1>
+        <p>caja absoluta</p>
+    </div>
+
+    <div class="caja_saludo_fixed">
+        <h1>caja fixed</h1>
+    </div>
+
+    <div class="caja_saludo_stiky">
+        <h1>caja pegajosa</h1>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+</body>
+</html>

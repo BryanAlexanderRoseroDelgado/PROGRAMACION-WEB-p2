@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Variables CSS Dinámicas</title>
+  <style>
+    :root {
+      --color-principal: #3498db;
+      --tamaño-fuente: 16px;
+      --espaciado: 1rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #333;
+      padding: var(--espaciado);
+    }
+
+    header {
+      background: var(--color-principal);
+      color: #fff;
+      padding: calc(var(--espaciado) * 1.5);
+      border-radius: 0.5rem;
+      text-align: center;
+    }
+
+    main {
+      margin-top: var(--espaciado);
+    }
+
+    .card {
+      background: #fff;
+      padding: var(--espaciado);
+      border: 1px solid #ddd;
+      border-radius: 0.5rem;
+      margin-bottom: var(--espaciado);
+    }
+
+    .controls {
+      display: flex;
+      gap: var(--espaciado);
+      margin-bottom: var(--espaciado);
+      align-items: center;
+    }
+
+    .btn {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.25rem;
+      background: var(--color-principal);
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Variables CSS</h1>
+  </header>
+  <main>
+    <div class="controls">
+      <label for="inputColor">Color principal:</label>
+      <input type="color" id="inputColor" value="#3498db">
+
+      <button class="btn" onclick="resetDefaults()">Restablecer</button>
+    </div>
+
+    <div class="card">
+      <h2>ejemplo</h2>
+      <p>.</p>
+    </div>
+
+  </main>
+
+  <script>
+    const root = document.documentElement;
+    const inputColor = document.getElementById('inputColor');
+
+    inputColor.addEventListener('input', e => {
+      root.style.setProperty('--color-principal', e.target.value);
+    });
+
+    
+    function resetDefaults() {
+      inputColor.value = '#3498db';
+      inputSize.value  = '16';
+      root.style.setProperty('--color-principal', '#3498db');
+      root.style.setProperty('--tamaño-fuente', '16px');
+    }
+  </script>
+</body>
+</html>

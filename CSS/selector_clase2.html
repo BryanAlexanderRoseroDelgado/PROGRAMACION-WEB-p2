@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .titulo{
+            color: blue;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 45px;
+            text-align: center;
+            background-color: brown;
+        }
+        label{
+            color: beige;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 30px;
+            background-color: black;
+        }
+        #opciones{
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .subir{
+            color: rgb(77, 201, 120);
+            font-size: 25px;
+            
+        }
+        .fila1{
+            font-weight: bold;
+            color: rgb(21, 73, 73);
+            font-size: 20px;
+        }
+        .fila2{
+            color: darkgreen;
+            font-size: 15px;
+        }
+        a  {
+            font-family: 'Courier New', Courier, monospace;
+            color: chocolate;
+            font-weight: bold;
+        }
+        table{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid py-5">
+        <h1 class="titulo">Pruebas de uso con css</h1>
+        <br>
+        <form class="formulario">
+            <label for="opciones">Menu de opciones</label>
+            <br>
+            <select name="" id="opciones">
+                <option value="">menu principal</option>
+                <option value="">guardar</option>
+                <option value="">configuraciones</option>
+            </select>
+            <br>
+            <a href="./selector_clase.html" >Mover</a>
+            <br><br>
+            <label for="tabla"> Tabla de resultados </label>
+            <table id="tabla">
+                <tr class="fila1">
+                    <th>
+                        nombre 1
+                    </th>
+                    <th>
+                        nombre 2
+                    </th>
+                    <th>
+                        nombre 3
+                    </th>
+                </tr>
+                <tr class="fila2">
+                    <th>
+                        nota 1
+                    </th>
+                    <th>
+                        nota 2
+                    </th>
+                    <th>
+                        nota 3
+                    </th>
+                </tr>
+            </table>
+            <br>
+            <button class="subir">GUARDAR</button>
+        </form>
+    </div>
+</body>
+</html>

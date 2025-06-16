@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio de Deber CSS</title>
+    <link rel="stylesheet" href="./public/css/responsive.css">
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+<body>
+    <header>
+        <h1>Ejercicio CSS Responsivo</h1>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+
+    <div class="container">
+        <div class="column">
+            <h2>📋 Información</h2>
+            <p>Sección de información importante sobre nuestros servicios.</p>
+            
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" placeholder="Tu nombre">
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="tu@email.com">
+            </div>
+            
+            <button class="btn">Enviar</button>
+        </div>
+
+        <div class="column">
+            <h2>🚀 Contenido Principal</h2>
+            <p>Contenido principal de nuestra plataforma web.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Diseño</td>
+                        <td>✅ Activo</td>
+                    </tr>
+                    <tr>
+                        <td>Animaciones</td>
+                        <td>🔄 Proceso</td>
+                    </tr>
+                    <tr>
+                        <td>Optimización</td>
+                        <td>⏳ Pendiente</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" rows="3" placeholder="Tu opinión..."></textarea>
+            </div>
+            
+            <button class="btn">Publicar</button>
+        </div>
+
+        <div class="column">
+            <h2>📰 Noticias</h2>
+            <p>Últimas actualizaciones y novedades del proyecto.</p>
+            
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria">
+                    <option>Todas</option>
+                    <option>Tecnología</option>
+                    <option>Diseño</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="buscar">Buscar:</label>
+                <input type="search" id="buscar" placeholder="Buscar...">
+            </div>
+            
+            <button class="btn">Buscar</button>
+        </div>
+    </div>
+
+    <footer>
+        <p><strong>Práctica CSS Responsivo - NRC: 23245</strong></p>
+    </footer>
+</body>
+</html>
