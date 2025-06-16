@@ -3,9 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>introduccion a java</title>
+    <title>Introduccion a JAVA script</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.5-dist/css/bootstrap.min.css">
+
+    <!--     <script>
+        alert("Hola Mundo desde JavaScript");   
+    </script> -->
+
+    <style>
+        body {
+            background-color: #1e5285;
+        }
+        h1 {
+            color: #ffc1c1;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .btn {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>HOLA MUNDO</h1>
+    <div class="container">
+
+        <head>
+                <h1 onclick="alert('Hola Mundo desde el H1')">HOLA MUNDO</h1>
+                <h1>Suma de dos numeros</h1>
+                <br>
+        </head>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12">
+
+                <label for="numero_1">Ingrese el primer numero</label>
+                <input type="number" id="numero_1" placeholder="Solo numeros" class="form-control">
+                <br><br>
+
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <label for="numero_2">Ingrese el segundo numero</label>
+                <input type="number" id="numero_2" placeholder="Solo numeros" class="form-control">
+                <br><br>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <button id="btn_suma" class="btn btn-primary " onclick="calcSuma()">Sumar</button>
+                <br><br>
+                <button id="btn_resta" class="btn btn-danger" onclick="calcResta()">Restar</button>
+                <br><br>
+                <button id="btn_multiplicacion" class="btn btn-warning" onclick="calcMultiplicacion()">Multiplicar</button>
+                <br><br>
+                <button id="btn_division" class="btn btn-success" onclick="calcDivision()">Dividir</button>
+                <br><br>
+                <label for="resultado">Resultado</label>
+                <h1 id="resultado"></h1>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="./bootstrap-5.3.5-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/saludo.js"></script>
+    <script src="./js/suma.js"></script>
 </body>
 </html>
