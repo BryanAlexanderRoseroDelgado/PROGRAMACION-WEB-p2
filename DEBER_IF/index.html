@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Completo con Eventos</title>
+    <link rel="stylesheet" href="./public/bootstrap-5.3.5-dist/css/bootstrap.min.css">
+    <style>
+        .mensaje {
+            margin-top: 5px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body >
+    <div class="container py-4">
+        <h1 class="text-center mb-5">Formulario Interactivo con Todos los Inputs</h1>
+
+        <!-- TEXT -->
+        <div class="mb-4">
+            <h4>Texto</h4>
+            <input type="text" class="form-control mb-2" id="nombre" placeholder="Escribe tu nombre"
+                oninput="mostrarNombre(this.value)" onchange="mostrarNombre(this.value)" onblur="mostrarNombre(this.value)">
+            <div id="msgNombre" class="mensaje"></div>
+
+            <input type="text" class="form-control my-2" id="enfocar" placeholder="Haz clic aquí" onfocus="mostrarFoco()">
+            <div id="msgFoco" class="mensaje"></div>
+
+            <input type="text" class="form-control" id="teclado" placeholder="Presiona teclas"
+                onkeydown="mostrarTeclado(event)" onkeyup="mostrarTeclado(event)" onkeypress="mostrarTeclado(event)">
+            <div id="msgTeclado" class="mensaje"></div>
+        </div>
+
+        <!-- EMAIL, NUMERO, PASSWORD -->
+        <div class="mb-4">
+            <h4>Correo Electrónico, Número y Contraseña</h4>
+            <input type="email" class="form-control mb-2" id="email" placeholder="Escribe tu email"
+                oninput="validarEmail(this.value)" onchange="validarEmail(this.value)" onblur="validarEmail(this.value)">
+            <div id="msgEmail" class="mensaje"></div>
+
+            <input type="number" class="form-control mb-2" id="numero" placeholder="Escribe un número"
+                oninput="validarNumero(this.value)" onchange="validarNumero(this.value)" onblur="validarNumero(this.value)">
+            <div id="msgNumero" class="mensaje"></div>
+
+            <input type="password" class="form-control" id="password" placeholder="Escribe tu contraseña"
+                onkeypress="validarPassword(event)" onkeyup="validarPassword(event)" onblur="validarPassword(event)">
+            <div id="msgPassword" class="mensaje"></div>
+        </div>
+
+        <!-- FECHA, HORA, ARCHIVO -->
+        <div class="mb-4">
+            <h4>Fecha, Hora y Archivo</h4>
+            <input type="date" class="form-control mb-2" id="fecha"
+                onchange="validarFecha(this.value, 'change')" onblur="validarFecha(this.value, 'blur')" onfocus="validarFecha(this.value, 'focus')">
+            <div id="msgFecha" class="mensaje"></div>
+
+            <input type="time" class="form-control mb-2" id="hora"
+                onchange="validarHora(this.value, 'change')" onblur="validarHora(this.value, 'blur')">
+            <div id="msgHora" class="mensaje"></div>
+
+            <input type="file" class="form-control" id="archivo"
+                onchange="validarArchivo(this.files[0], 'change')" onclick="validarArchivo(this.files[0], 'click')" onblur="validarArchivo(this.files[0], 'blur')">
+            <div id="msgArchivo" class="mensaje"></div>
+        </div>
+
+        <!-- RANGE, COLOR, TEL, URL -->
+        <div class="mb-4">
+            <h4>Rango, Color, Teléfono y URL</h4>
+            <label>Rango:</label>
+            <input type="range" class="form-range" id="rango" min="0" max="100" value="50"
+                oninput="validarRango(this.value, 'input')" onchange="validarRango(this.value, 'change')">
+            <div id="msgRango" class="mensaje mb-2"></div>
+
+            <input type="color" class="form-control form-control-color mb-2" id="color" value="#ff0000"
+                oninput="validarColor(this.value, 'input')" onchange="validarColor(this.value, 'change')">
+            <div id="msgColor" class="mensaje"></div>
+
+            <input type="tel" class="form-control mb-2" id="telefono" placeholder="Escribe tu teléfono"
+                oninput="validarTelefono(this.value)" onkeyup="validarTelefono(this.value)">
+            <div id="msgTelefono" class="mensaje"></div>
+
+            <input type="url" class="form-control" id="url" placeholder="Escribe una URL"
+                oninput="validarURL(this.value, 'input')" onblur="validarURL(this.value, 'blur')">
+            <div id="msgURL" class="mensaje"></div>
+        </div>
+
+        <!-- CHECKBOX, RADIO, SELECT -->
+        <div class="mb-4">
+            <h4>Checkbox, Radio y Select</h4>
+            <div class="form-check">
+                <input type="checkbox" id="checkbox" 
+                    onclick="validarCheckbox(this.checked, 'click')" 
+                    onchange="validarCheckbox(this.checked, 'change')">
+                <label for="checkbox">Acepto los términos y condiciones</label>
+            </div>
+            <div id="msgCheckbox" class="mensaje"></div>
+
+            <div>
+                <input type="radio" name="radio" id="radio1" value="opcion1"
+                    onclick="validarRadio(this.value, 'click')" onchange="validarRadio(this.value, 'change')">
+                <label for="radio1">Opción 1</label>
+                <input type="radio" name="radio" id="radio2" value="opcion2"
+                    onclick="validarRadio(this.value, 'click')" onchange="validarRadio(this.value, 'change')">
+                <label for="radio2">Opción 2</label>
+            </div>
+            <div id="msgRadio" class="mensaje mb-2"></div>
+
+            <select class="form-select" id="select"
+                onchange="validarSelect(this.value, 'change')" onclick="validarSelect(this.value, 'click')"
+                onfocus="validarSelect(this.value, 'focus')" onblur="validarSelect(this.value, 'blur')">
+                <option value="">Selecciona una opción</option>
+                <option value="opcion1">Opción 1</option>
+                <option value="opcion2">Opción 2</option>
+            </select>
+            <div id="msgSelect" class="mensaje"></div>
+        </div>
+
+        <!-- TEXTAREA -->
+        <div class="mb-4">
+            <h4>Textarea</h4>
+            <textarea class="form-control" id="textarea" rows="4"
+                oninput="validarTextarea(this.value, 'input')" onkeyup="validarTextarea(this.value, 'keyup')"
+                onfocus="validarTextarea(this.value, 'focus')" onblur="validarTextarea(this.value, 'blur')"></textarea>
+            <div id="msgTextarea" class="mensaje"></div>
+        </div>
+
+        <!-- BOTON -->
+        <div class="mb-4">
+            <h4>Botón interactivo</h4>
+            <button class="btn btn-info" id="boton"
+                onclick="validarBoton()" onmouseover="cambiarColor(this, '#e0f7fa')"
+                onmouseout="cambiarColor(this, '#ffffff')" onmousedown="cambiarColor(this, '#b2ebf2')"
+                onmouseup="cambiarColor(this, '#e0f7fa')" onfocus="cambiarColor(this, '#b2ebf2')"
+                onblur="cambiarColor(this, '#ffffff')">Enviar</button>
+            <div id="msgBoton" class="mensaje"></div>
+        </div>
+
+        <!-- FORMULARIO FINAL -->
+        <div class="mb-4">
+            <h4>Formulario Final</h4>
+            <form onsubmit="validarFormulario(event)" onreset="validarFormulario(event)">
+                <input type="text" class="form-control mb-2" id="inputText" placeholder="Escribe algo"
+                    oninput="validarInput(this.value)" onchange="validarInput(this.value)">
+                <button class="btn btn-success" type="submit">Enviar</button>
+                <button class="btn btn-secondary" type="reset">Reiniciar</button>
+                <div id="msgForm" class="mensaje"></div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./public/bootstrap-5.3.5-dist/js/bootstrap.min.js"></script>
+    <script src="./public/dis/js/forms.js"></script>
+    <script src="./public/dis/js/forms2.js"></script>
+</body>
+</html>
